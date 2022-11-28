@@ -4,20 +4,23 @@
  */
 package pe.edu.upeu.gui;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JButton;
+
 
 /**
  *
  * @author Usuario
  */
-public class MainJuego extends javax.swing.JFrame implements ActionListener{
-    JButton[] boton=new JButton[9];
-  
+public class MainJuego extends javax.swing.JFrame {
+    
+        private JButton [][] casillas;
+
         
     public MainJuego() {
+       casillas = new JButton [3][3];
         initComponents();
+           asignarCasillas();
+        
     }
 
     /**
@@ -34,22 +37,22 @@ public class MainJuego extends javax.swing.JFrame implements ActionListener{
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
+        casilla3 = new javax.swing.JButton();
+        casilla5 = new javax.swing.JButton();
+        casilla6 = new javax.swing.JButton();
+        casilla9 = new javax.swing.JButton();
+        casilla7 = new javax.swing.JButton();
+        casilla8 = new javax.swing.JButton();
+        casilla4 = new javax.swing.JButton();
+        casilla1 = new javax.swing.JButton();
+        casilla2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        inicio = new javax.swing.JButton();
+        anular = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
 
@@ -88,41 +91,62 @@ public class MainJuego extends javax.swing.JFrame implements ActionListener{
 
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton7.setText("jButton4");
-        jButton7.setBorder(null);
-        jPanel5.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 90, 90));
+        casilla3.setBorder(null);
+        casilla3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                casilla3ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(casilla3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 90, 90));
 
-        jButton8.setText("jButton4");
-        jButton8.setBorder(null);
-        jPanel5.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 90, 90));
+        casilla5.setBorder(null);
+        casilla5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                casilla5ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(casilla5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 90, 90));
 
-        jButton9.setText("jButton4");
-        jButton9.setBorder(null);
-        jPanel5.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 90, 90));
+        casilla6.setBorder(null);
+        jPanel5.add(casilla6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 90, 90));
 
-        jButton10.setText("jButton4");
-        jButton10.setBorder(null);
-        jPanel5.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 90, 90));
+        casilla9.setBorder(null);
+        casilla9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                casilla9ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(casilla9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 90, 90));
 
-        jButton11.setText("jButton4");
-        jButton11.setBorder(null);
-        jPanel5.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 90, 90));
+        casilla7.setBorder(null);
+        jPanel5.add(casilla7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 90, 90));
 
-        jButton12.setText("jButton4");
-        jButton12.setBorder(null);
-        jPanel5.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 90, 90));
+        casilla8.setBorder(null);
+        jPanel5.add(casilla8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 90, 90));
 
-        jButton13.setText("jButton4");
-        jButton13.setBorder(null);
-        jPanel5.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 90, 90));
+        casilla4.setBorder(null);
+        casilla4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                casilla4ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(casilla4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 90, 90));
 
-        jButton14.setText("jButton4");
-        jButton14.setBorder(null);
-        jPanel5.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 90));
+        casilla1.setBorder(null);
+        casilla1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                casilla1ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(casilla1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 90));
 
-        jButton15.setText("jButton4");
-        jButton15.setBorder(null);
-        jPanel5.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 90, 90));
+        casilla2.setBorder(null);
+        casilla2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                casilla2MouseClicked(evt);
+            }
+        });
+        jPanel5.add(casilla2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 90, 90));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -160,17 +184,22 @@ public class MainJuego extends javax.swing.JFrame implements ActionListener{
         });
 
         jTextField2.setText("jTextField2");
-
-        jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jButton1.setText("INICIAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jTextField2ActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jButton2.setText("ANULAR");
+        inicio.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        inicio.setText("INICIAR");
+        inicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inicioActionPerformed(evt);
+            }
+        });
+
+        anular.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        anular.setText("ANULAR");
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 51));
 
@@ -213,9 +242,9 @@ public class MainJuego extends javax.swing.JFrame implements ActionListener{
                                     .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
                                     .addComponent(jTextField2)))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(inicio)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton2)))
+                                .addComponent(anular)))
                         .addGap(0, 96, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -232,8 +261,8 @@ public class MainJuego extends javax.swing.JFrame implements ActionListener{
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(inicio, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                    .addComponent(anular, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -263,30 +292,58 @@ public class MainJuego extends javax.swing.JFrame implements ActionListener{
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_inicioActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void casilla3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casilla3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_casilla3ActionPerformed
+
+    private void casilla1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casilla1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_casilla1ActionPerformed
+
+    private void casilla4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casilla4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_casilla4ActionPerformed
+
+    private void casilla5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casilla5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_casilla5ActionPerformed
+
+    private void casilla9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casilla9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_casilla9ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void casilla2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_casilla2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_casilla2MouseClicked
     
     /**
      * @param args the command line arguments
      */
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton anular;
+    private javax.swing.JButton casilla1;
+    private javax.swing.JButton casilla2;
+    private javax.swing.JButton casilla3;
+    private javax.swing.JButton casilla4;
+    private javax.swing.JButton casilla5;
+    private javax.swing.JButton casilla6;
+    private javax.swing.JButton casilla7;
+    private javax.swing.JButton casilla8;
+    private javax.swing.JButton casilla9;
+    private javax.swing.JButton inicio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -301,8 +358,29 @@ public class MainJuego extends javax.swing.JFrame implements ActionListener{
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+  
+    private void asignarCasillas() {
+        casillas[0][0] = casilla1;
+        casillas[0][1] = casilla2;
+        casillas[0][2] = casilla3;
+        casillas[1][0] = casilla4;
+        casillas[1][1] = casilla5;
+        casillas[1][2] = casilla6;
+        casillas[2][0] = casilla7;
+        casillas[2][1] = casilla8;
+        casillas[2][2] = casilla9;
     }
+   public JButton[][] getCasillas(){
+       return casillas;    
+   }
+   
+   public JButton getInicio() {
+       return inicio;
+   }
+   
+    public JButton getAnular() {
+       return anular;
+   }
+   
+   
 }
