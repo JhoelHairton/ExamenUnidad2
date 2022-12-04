@@ -8,10 +8,7 @@ import pe.edu.upeu.evaluacion2.gui.ControladorJuego;
 import pe.edu.upeu.evaluacion2.gui.MainJuego;
 import pe.edu.upeu.evaluacion2.gui.ModeloJuego;
 
-/**
- *
- * @author HP
- */
+
 public class Evaluacion2 {
 
     public static void main(String[] args) {
@@ -19,6 +16,6 @@ public class Evaluacion2 {
         MainJuego view = new MainJuego();
         ControladorJuego controlador = new ControladorJuego(view, model);
         view.setLocationRelativeTo(null);
-        view.setVisible(true);
+        view.setVisible(true); //
     }
 }
