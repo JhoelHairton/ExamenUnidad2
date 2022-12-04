@@ -20,8 +20,7 @@ import javax.swing.table.TableRowSorter;
 import pe.edu.upeu.evaluacion2.dao.ResultadoDAO;
 import pe.edu.upeu.evaluacion2.dao.ResultadoDaoI;
 import pe.edu.upeu.evaluacion2.modelo.ResultadoTO;
-import pe.edu.upeu.evaluacion2.util.MsgBox;
-import pe.edu.upeu.evaluacion2.util.UtilsX;
+
 
 /**
  *
@@ -34,10 +33,9 @@ public class MainJuego extends javax.swing.JFrame {
     ResultadoDaoI rDao;
     public static ResultadoTO uTO = new ResultadoTO();
     DefaultTableModel modelo;
-    MsgBox msg;
+     ;
     TableRowSorter<TableModel> trsfiltro;
     BufferedImage image;
-    UtilsX obj = new UtilsX();
 
     public MainJuego() {
         initComponents();
@@ -46,7 +44,6 @@ public class MainJuego extends javax.swing.JFrame {
         this.setTitle("Jhoel Hairton_Evaluacion2");
        
         try {
-            image = ImageIO.read(obj.getFile("LOGO-SISTEMAS0.png"));
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }

@@ -15,7 +15,6 @@ import java.util.Vector;
 import java.util.logging.Level;
 import pe.edu.upeu.evaluacion2.conx.ConnS;
 import pe.edu.upeu.evaluacion2.modelo.ResultadoTO;
-import pe.edu.upeu.evaluacion2.util.ErrorLogger;
 
 
 public class ResultadoDAO implements ResultadoDaoI{
@@ -25,7 +24,6 @@ public class ResultadoDAO implements ResultadoDaoI{
     Vector visitdata;
     Connection connection = ConnS.getInstance().getConnection();
     static PreparedStatement ps;
-    static ErrorLogger log = new ErrorLogger(ResultadoDAO.class.getName());
     ResultSet rs = null;
 
     public ResultadoDAO() {
@@ -57,7 +55,6 @@ public class ResultadoDAO implements ResultadoDaoI{
             }
         } catch (SQLException ex) {
             //System.err.println("create:" + ex.toString());
-            log.log(Level.SEVERE, "create", ex);
         }
         return rsId;
     }
@@ -82,7 +79,6 @@ public class ResultadoDAO implements ResultadoDaoI{
             ps.setInt(++i, d.getIdResultado());
             comit = ps.executeUpdate();
         } catch (SQLException ex) {
-            log.log(Level.SEVERE, "update", ex);
         }
         return comit;}
 
@@ -95,7 +91,6 @@ public class ResultadoDAO implements ResultadoDaoI{
             ps.setString(1, id);
             comit = ps.executeUpdate();
         } catch (SQLException ex) {
-            log.log(Level.SEVERE, "delete", ex);
             // System.err.println("NO del " + ex.toString());
             throw new Exception("Detalle:" + ex.getMessage());
         }
